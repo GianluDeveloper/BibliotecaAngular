@@ -13,9 +13,15 @@ export class WelcomeComponent implements OnInit {
   password = '';
   idCliente = 3;
   clienteM!: Clienti;
+  clientiM!: Clienti[];
   constructor(private cs: ProvaServizioService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cs.lista().subscribe((data) => {
+      this.clientiM = data;
+    });
+  }
+
   verifica() {
     if (this.login === 'pippo' && this.password === '1234') {
       this.statoLogin = 'Loggato con successo';

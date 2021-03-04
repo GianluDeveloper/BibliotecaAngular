@@ -11,3 +11,10 @@
 <p>{{ clienteM?.cognome }}</p>
 <button (click)="verifica()">Effettua il login</button><br />
 <button (click)="trovaCliente()">Trova Cliente</button>
+
+<h1>Lista Clienti</h1>
+<ul>
+  <li *ngFor="let cliente of clientiM">
+    {{ cliente.nome }} - {{ cliente.cognome }}
+  </li>
+</ul>
