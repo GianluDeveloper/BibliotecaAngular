@@ -1,0 +1,11 @@
+<p class="test">Ciao dal componente welcome</p>
+<h1>Login</h1>
+<p>
+  <label for="login">Username</label>&nbsp;
+  <input type="text" name="login" [(ngModel)]="login" />
+  <br />
+  <label for="password">Password</label> &nbsp;
+  <input type="text" name="password" [(ngModel)]="password" />
+</p>
+<p>{{ statoLogin }}</p>
+<button (click)="verifica()">Effettua il login</button>
