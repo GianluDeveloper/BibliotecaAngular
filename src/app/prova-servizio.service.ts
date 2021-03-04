@@ -20,7 +20,13 @@ export class ProvaServizioService {
   //   return this.http.post(`${baseUrl}/Inserisci`, c);
   // }
   cancella(idCliente: number) {
-    return this.http.delete(`${baseUrl}/Cancella?idCliente=${idCliente}`);
+    const cliente = {} as Clienti;
+    cliente.idCliente = idCliente;
+    return this.http.delete(`${baseUrl}/delete?id=${idCliente}`, {
+      headers: {
+        'content-Type': 'application/json',
+      },
+    });
   }
   modifica(c: Clienti) {
     return this.http.put(`${baseUrl}/Modifica`, c);

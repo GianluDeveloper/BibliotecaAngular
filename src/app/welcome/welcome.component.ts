@@ -29,6 +29,9 @@ export class WelcomeComponent implements OnInit {
       this.statoLogin = 'Errore di autenticazione';
     }
   }
+  elimina(): void {
+    this.cs.cancella(25).subscribe((data) => {});
+  }
   trovaCliente(): void {
     this.cs.ritorna(this.idCliente++).subscribe(
       (data) => {
