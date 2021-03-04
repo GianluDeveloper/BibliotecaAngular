@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ErroreComponent } from './errore/errore.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent],
+  declarations: [AppComponent, WelcomeComponent, ErroreComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
