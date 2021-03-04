@@ -8,4 +8,6 @@
   <input type="text" name="password" [(ngModel)]="password" />
 </p>
 <p>{{ statoLogin }}</p>
-<button (click)="verifica()">Effettua il login</button>
+<p>{{ clienteM?.cognome }}</p>
+<button (click)="verifica()">Effettua il login</button><br />
+<button (click)="trovaCliente()">Trova Cliente</button>
