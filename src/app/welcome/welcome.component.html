@@ -19,3 +19,8 @@
     {{ cliente.idCliente }} - {{ cliente.nome }} - {{ cliente.cognome }}
   </li>
 </ul>
+<button (click)="nuovo()">Prendi nuovo REST</button>
+<p>
+  {{ clienteNuovo?.idCliente }} - {{ clienteNuovo?.nome }} -
+  {{ clienteNuovo?.cognome }} - {{ clienteNuovo?.telefono }} -
+</p>

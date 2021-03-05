@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProvaServizioService } from '../prova-servizio.service';
 import { Clienti } from '../model/ProvaModel';
+import { NuovoServizioService } from '../service/nuovo-servizio.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,17 +9,27 @@ import { Clienti } from '../model/ProvaModel';
   styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent implements OnInit {
+  clienteNuovo!: Clienti;
   statoLogin = '';
   login = '';
   password = '';
   idCliente = 3;
   clienteM!: Clienti;
   clientiM!: Clienti[];
-  constructor(private cs: ProvaServizioService) {}
+  constructor(
+    private cs: ProvaServizioService,
+    private ns: NuovoServizioService
+  ) {}
 
   ngOnInit(): void {
     this.cs.lista().subscribe((data) => {
       this.clientiM = data;
+    });
+  }
+
+  nuovo() {
+    this.ns.provalo().subscribe((data) => {
+      this.clienteNuovo = data;
     });
   }
 
@@ -29,6 +40,7 @@ export class WelcomeComponent implements OnInit {
       this.statoLogin = 'Errore di autenticazione';
     }
   }
+  provaServizioNuovo() {}
   elimina(): void {
     this.cs.cancella(25).subscribe((data) => {});
   }
